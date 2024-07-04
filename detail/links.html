@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juhyun Profile</title>
+    <style>
+        /* 전체 스타일 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 80%;
+            margin: 45px auto;
+        }
+
+        .head_name {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none; /* 밑줄 제거 */
+            color: gray; /* 링크 색상 설정 */
+        }
+
+        /* 링크에 마우스를 올렸을 때 스타일 설정 */
+        a:hover {
+            color: black !important; /* 호버 시 색상 설정 */
+        }
+
+        /* 방문한 링크의 스타일 설정 */
+        a:visited {
+            color: gray; /* 방문 후 색상 설정 */
+        }
+
+        /* 메인 컨테이너 스타일 */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* 섹션 제목 스타일 */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* 섹션 하위 제목 스타일 */
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* 이메일 박스 스타일 */
+        .email-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .email-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-box:hover {
+            background-color: rgba(255, 0, 187, 0.256);
+            border: 1px solid rgba(255, 0, 187, 0.256);
+        }
+
+        /* 디스코드 박스 스타일 */
+        .discord-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .discord-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .discord-box:hover {
+            background-color: rgba(144, 0, 255, 0.256);
+            border: 1px solid rgba(144, 0, 255, 0.256);
+        }
+
+        /* 깃허브 박스 스타일 */
+        .github-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .github-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .github-box:hover {
+            background-color: rgba(80, 80, 80, 0.256);
+            border: 1px solid rgba(80, 80, 80, 0.256);
+        }
+
+        /* 대표 연락처/링크 박스 스타일 */
+        .rep_link {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column; /* 수직 정렬 */
+        }
+
+        .rep_link h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .rep_link_left {
+            display: flex;
+            align-items: center; /* 수직 정렬 */
+        }
+
+        /* SNS 박스 스타일 */
+        .sns_link {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .facebook-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .facebook-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .facebook-box:hover {
+            background-color: rgba(0, 21, 255, 0.256);
+            border: 1px solid rgba(0, 21, 255, 0.256);
+        }
+
+        .instagram-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .instagram-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .instagram-box:hover {
+            background-color: rgba(255, 0, 217, 0.256);
+            border: 1px solid rgba(255, 0, 217, 0.256);
+        }
+
+        .threads-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        .threads-box img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .threads-box:hover {
+            background-color: rgba(80, 80, 80, 0.256);
+            border: 1px solid rgba(80, 80, 80, 0.256);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <ul class="head_name">
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="links.html">링크</a></li>
+            <li><a href="career.html">이력</a></li>
+            <li><a href="gall.html">작업</a></li>
+            <li><a href="data.html">자료</a></li>
+            <li><a href="blog.html">블로그</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <h1>링크</h1>
+        <hr>
+        <div class="rep_link">
+            <h2>대표 연락처/링크</h2>
+            <!-- 이메일 박스 -->
+            <div class="email-box" onclick="copyToClipboard('.email-text')">
+                <span style="font-weight: bold; color: rgb(255, 0, 187);" class="rep_link_left">
+                    <img src="../source/emailicon.png" alt="Email Icon">
+                    <span>Email</span>
+                </span>
+                <span class="email-text">ojh27467242@gmail.com</span>
+            </div>
+            
+            <!-- 디스코드 박스 -->
+            <div class="discord-box" onclick="copyToClipboard('.discord-text')">
+                <span style="font-weight: bold; color: rgb(144, 0, 255);" class="rep_link_left">
+                    <img src="../source/discordicon.svg" alt="Discord Icon">
+                    Discord
+                </span>
+                <span class="discord-text">@0.311_</span>
+            </div>
+            
+            <!-- 깃허브 박스 -->
+            <div class="github-box" onclick="copyToClipboard('.github-text')">
+                <span style="font-weight: bold; color: rgb(80, 80, 80);" class="rep_link_left">
+                    <img src="../source/githubicon.svg" alt="GitHub Icon">
+                    Github
+                </span>
+                <span class="github-text">@beorrol</span>
+            </div>
+        </div>
+        <div class="sns_link">
+            <h2>SNS</h2>
+            <div class="link_box">
+                <div class="facebook-box" onclick="copyToClipboard('.facebook-text')">
+                    <span style="font-weight: bold; color: rgb(0, 21, 255);" class="rep_link_left">
+                        <img src="../source/facebookicon.svg" alt="Facebook Icon" width="24px" height="24px">
+                        Facebook
+                    </span>
+                    <span class="facebook-text">오주현</span>
+                </div>
+
+                <div class="instagram-box" onclick="copyToClipboard('.instagram-text')">
+                    <span style="font-weight: bold; color: rgb(255, 0, 217);" class="rep_link_left">
+                        <img src="../source/instagramicon.svg" alt="Instagram Icon" width="24px" height="24px">
+                        Instagram
+                    </span>
+                    <span class="instagram-text">@xx._un8</span>
+                </div>
+
+                <div class="threads-box" onclick="copyToClipboard('.threads-text')">
+                    <span style="font-weight: bold; color: rgb(80, 80, 80);" class="rep_link_left">
+                        <img src="../source/threadsicon.png" alt="threads Icon" width="24px" height="24px">
+                        Threads
+                    </span>
+                    <span class="threads-text">@xx._un8</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 클립보드에 텍스트 복사 기능 구현 -->
+    <script>
+        function copyToClipboard(selector) {
+            const textToCopy = document.querySelector(selector).textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('텍스트가 복사되었습니다: ' + textToCopy);
+        }
+    </script>
+</body>
+</html>
